@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
 
   def index
+    @user = User.find_by({ "id" => session["user_id"] })
     @places = Place.all
   end
 

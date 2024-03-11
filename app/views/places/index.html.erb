@@ -1,12 +1,26 @@
-<h1>Places</h1>
 
-<p>
-  <a href="/places/new">New place</a>
-</p>
 
-<ul>
-  <% for place in @places %>
-    <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
-  <% end %>
-</ul>
+<% if @user != nil %>
+   <h1>Places</h1>
+   <p>
+    <a class="btn btn-primary" href="/places/new" role="button">New Places</a>
+   </p>
+
+   <ul>
+    <% for place in @places %>
+     <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>
+   <a class="btn btn-success" href="/login" role="button">Login</a>
+  </p>
+  <p>
+   <a class="btn btn-success" href="/users/new" role="button">Signup</a>
+  </p>
+<% end %>
+
+
+
+
 
