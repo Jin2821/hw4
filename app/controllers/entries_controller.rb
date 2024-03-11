@@ -1,14 +1,4 @@
 class EntriesController < ApplicationController
-  def index
-    @entries = Entry.all
-
-    respond_to do |format|
-      format.html
-      format.json do
-        render :json => @entries
-      end
-    end
-  end
 
   def new
     @user = User.find_by({ "id" => session["user_id"] })
